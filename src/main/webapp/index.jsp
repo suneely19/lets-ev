@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h1 align="center"> Welcome to the LETS-EV CAR booking Application</h1>
+
 </body>
 </html>

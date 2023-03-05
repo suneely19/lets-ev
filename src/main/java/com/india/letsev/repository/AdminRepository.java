@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class AdminRepository {
 
-    public boolean createAdminTeable() throws LetsEVDBException{
+    public boolean createAdminTable() throws LetsEVDBException{
         try{
             Connection connection=ConnectionUtil.getConnection();
             Statement statement=connection.createStatement();

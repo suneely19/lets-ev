@@ -14,7 +14,7 @@ public class AdminService {
 
     public boolean createAdminTable()throws LetsEVGeneralException{
         try {
-            return repository.createAdminTeable();
+            return repository.createAdminTable();
         }catch (LetsEVDBException e){
             throw new LetsEVGeneralException("Exception occured while creating Admin table",e);
         }

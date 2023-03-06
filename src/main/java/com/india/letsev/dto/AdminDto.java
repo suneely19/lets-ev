@@ -1,9 +1,6 @@
 package com.india.letsev.dto;
 
 public class AdminDto {
-
-
-
     private int id;
     private String name;
     private String mailid;
@@ -11,8 +8,6 @@ public class AdminDto {
     private  int mobile;
     private int experience;
     private double salary;
-
-
     public int getId() {
         return id;
     }

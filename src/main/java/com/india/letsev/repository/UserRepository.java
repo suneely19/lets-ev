@@ -10,6 +10,15 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class UserRepository {
+    public boolean createUserTable() throws LetsEVDBException{
+        try{
+            Connection connection=ConnectionUtil.getConnection();
+            Statement statement=connection.createStatement();
+            return statement.execute(QueryConstants.CREATE_USER_QUERY);
+        }catch (Exception e){
+            throw new LetsEVDBException("Execption occured while creating the user table",e);
+        }
+    }
     public int registerUser(UserDTO userDTO) throws LetsEVDBException {
         Connection connection=null;
         PreparedStatement preparedStatement=null;

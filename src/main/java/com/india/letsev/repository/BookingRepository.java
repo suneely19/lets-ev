@@ -2,15 +2,12 @@ package com.india.letsev.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
+
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.BookingDTO;
-
 import com.india.letsev.exception.LetsEVDBException;
 import com.india.letsev.util.ConnectionUtil;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
 
 public class BookingRepository {
 

@@ -3,6 +3,8 @@ package com.india.letsev.repository;
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.UserDTO;
 import com.india.letsev.exception.LetsEVDBException;
+import com.india.letsev.exception.LetsEVGeneralException;
+import com.india.letsev.mapper.UserMapper;
 import com.india.letsev.util.ConnectionUtil;
 
 import java.sql.Connection;
@@ -25,16 +27,10 @@ public class UserRepository {
         try{
             connection= ConnectionUtil.getConnection();
             preparedStatement =connection.prepareStatement(QueryConstants.INSERT_USER_QUERY);
+            preparedStatement= UserMapper.userInsertMapper(preparedStatement,userDTO);
+         return preparedStatement.executeUpdate();
 
-            preparedStatement.setInt(1,userDTO.getId());
-            preparedStatement.setString(2, userDTO.getName());
-            preparedStatement.setString(3, userDTO.getMailid());
-            preparedStatement.setString(3, userDTO.getAddress());
-            preparedStatement.setString(4, userDTO.getMobileno());
-            preparedStatement.setString(5, userDTO.getMobileno());
-            preparedStatement.setString(6, userDTO.getLicence());
 
-            return preparedStatement.executeUpdate();
         }catch (Exception e){
             throw new LetsEVDBException("Exception occured while registering the User", e);
         }finally {
@@ -42,8 +38,9 @@ public class UserRepository {
                 preparedStatement.close();
                 connection.close();
             }catch (Exception e){
-                throw new LetsEVDBException("Exception occured while closing the connection");
+                throw new LetsEVDBException("Exception occured while closing the connection",e);
             }
         }
     }
+
 }

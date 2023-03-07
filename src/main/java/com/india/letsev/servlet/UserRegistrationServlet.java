@@ -1,5 +1,6 @@
 package com.india.letsev.servlet;
 
+import com.india.letsev.dto.UserDTO;
 import com.india.letsev.exception.LetsEVDBException;
 import com.india.letsev.exception.LetsEVGeneralException;
 import com.india.letsev.service.UserService;
@@ -34,6 +35,18 @@ public class UserRegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        UserDTO userDTO=new UserDTO();
+        userDTO.setId(Integer.valueOf(req.getParameter("id")));
+        userDTO.setName(req.getParameter("name"));
+        userDTO.setMailid(req.getParameter("mailid"));
+        userDTO.setAddress(req.getParameter("address"));
+        userDTO.setMobileno(req.getParameter("mobileno"));
+        userDTO.setLicence(req.getParameter("licence"));
+        try{
+            service.UserRegister(userDTO);
+            resp.sendRedirect("user-registration-success.jsp");
+        }catch (LetsEVGeneralException e){
+            resp.sendRedirect("user-registration-failure");
+        }
     }
 }

@@ -6,7 +6,7 @@ import com.india.letsev.repository.AdminRepository;
 
 public class AdminService {
 
-    AdminRepository repository;
+    private AdminRepository repository;
     public AdminService(){
         repository=new AdminRepository();
     }

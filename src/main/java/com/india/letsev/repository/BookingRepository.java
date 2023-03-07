@@ -7,6 +7,7 @@ import java.sql.Statement;
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.BookingDTO;
 import com.india.letsev.exception.LetsEVDBException;
+import com.india.letsev.mapper.BookingMapper;
 import com.india.letsev.util.ConnectionUtil;
 
 public class BookingRepository {
@@ -29,14 +30,7 @@ public class BookingRepository {
 		try {
 			connection = ConnectionUtil.getConnection();
 			preparedStatement = connection.prepareStatement(QueryConstants.INSERT_BOOKING_QUERY);
-
-			preparedStatement.setInt(1, bookingDTO.getId());
-			preparedStatement.setString(2, bookingDTO.getUser_id());
-			preparedStatement.setInt(3, bookingDTO.getCar_id());
-			preparedStatement.setString(4, bookingDTO.getBoarding());
-			preparedStatement.setString(5, bookingDTO.getDestination());
-			preparedStatement.setInt(6, bookingDTO.getDuration());
-			preparedStatement.setDouble(7, bookingDTO.getAmount());
+			preparedStatement= BookingMapper.BookingInsertMapper(preparedStatement,bookingDTO);
 
 			return preparedStatement.executeUpdate();
 

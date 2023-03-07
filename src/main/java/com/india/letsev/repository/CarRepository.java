@@ -22,13 +22,13 @@ public class CarRepository {
          return  preparedStatement.executeUpdate();
 
         }catch (Exception e){
-            throw new LetsEVDBException("Exception occured while registering the car",e);
+            throw new LetsEVDBException("Exception occurred while registering the car",e);
         }finally {
             try{
                 preparedStatement.close();
                 connection.close();
             }catch (Exception e){
-                throw new LetsEVDBException("Exception occure while closing the connection",e);
+                throw new LetsEVDBException("Exception occurred while closing the connection",e);
             }
         }
 

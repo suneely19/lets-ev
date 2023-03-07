@@ -3,6 +3,7 @@ package com.india.letsev.repository;
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.AdminDto;
 import com.india.letsev.exception.LetsEVDBException;
+import com.india.letsev.mapper.AdminMapper;
 import com.india.letsev.util.ConnectionUtil;
 
 import java.sql.Connection;
@@ -18,7 +19,7 @@ public class AdminRepository {
           return statement.execute(QueryConstants.CREATE_ADMIN_QUERY);
 
         }catch (Exception e){
-            throw new LetsEVDBException("Exception occured while creating the Admin table",e);
+            throw new LetsEVDBException("Exception occurred while creating the Admin table",e);
 
         }
 
@@ -31,13 +32,7 @@ public class AdminRepository {
             connection=ConnectionUtil.getConnection();
             preparedStatement=connection.prepareStatement(QueryConstants.INSERT_ADMIN_QUERY);
 
-            preparedStatement.setInt(1,AdminDto.getId());
-            preparedStatement.setString(2,AdminDto.getName());
-            preparedStatement.setString(3,AdminDto.getMailid());
-            preparedStatement.setString(4,AdminDto.getAddress());
-            preparedStatement.setString(5,AdminDto.getMobile());
-            preparedStatement.setInt(6,AdminDto.getExperiance());
-            preparedStatement.setDouble(7,AdminDto.getSalary());
+            preparedStatement= AdminMapper.AdminInsertMapper(preparedStatement,AdminDto);
 
             return preparedStatement.executeUpdate();
 

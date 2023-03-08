@@ -2,7 +2,7 @@ package com.india.letsev.service;
 
 import com.india.letsev.exception.LetsEVDBException;
 import com.india.letsev.exception.LetsEVGeneralException;
-import com.india.letsev.repository.AdminRepository;
+import com.india.letsev.repository.CarRepository;
 import com.india.letsev.repository.CarRepository;
 
 public class CarService {
@@ -15,7 +15,8 @@ public class CarService {
     public boolean createAdminTable()throws LetsEVGeneralException {
         try {
             return repository.createCarTable();
-        }catch (LetsEVDBException e){
-            throw new LetsEVGeneralException("Exception occured while creating Car table",e);
+        } catch (Exception e) {
+            throw new LetsEVGeneralException("Exception occured while creating Car table", e);
         }
+    }
 }

@@ -9,6 +9,7 @@ public class QueryConstants {
     public static final String INSERT_BOOKING_QUERY="insert into booking(id,user_id,car_id,boarding,destination,duration,amount) values(?,?,?,?,?,?,?)";
     public static final String UPDATE_ADMIN_QUERY="update admin set name=?, mailid=?,address=?,mobile=?,experiance=?,salary=? where id=?";
     public static final String UPDATE_BOOKING_QUERY="update booking set user_id=?,car_id=?,boarding=?,destination=?,duration=?,amount=? where id=?";
+    public static final String INSERT_CAR_QUERY="insert into car(id,brand,model,colour,features,seatingcapacity,fuelType,verified,milage,chasisno,registrationno,engineno,verifiedAdminId) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
     public static final String DELETE_ADMIN_QUERY="delete admin where id=?";
     public static final String DELETE_BOOKING_QUERY="delete booking where id=?";
 

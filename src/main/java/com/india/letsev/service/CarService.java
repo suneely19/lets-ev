@@ -10,6 +10,7 @@ public class CarService {
     private CarRepository repository;
 
     public CarService(){
+
         repository=new CarRepository();
     }
 
@@ -17,7 +18,7 @@ public class CarService {
         try {
             return repository.registerCar(carDTO);
         }catch (LetsEVDBException e){
-            throw new LetsEVGeneralException("Exception occured while registering the car",e);
+            throw new LetsEVGeneralException("Exception occurred while registering the car",e);
         }
     }
 }

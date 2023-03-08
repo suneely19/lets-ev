@@ -5,9 +5,10 @@ public class AdminDto {
     private String name;
     private String mailid;
     private String address;
-    private  int mobile;
-    private int experience;
+    private String mobile;
+    private int experiance;
     private double salary;
+
     public int getId() {
         return id;
     }
@@ -40,20 +41,20 @@ public class AdminDto {
         this.address = address;
     }
 
-    public int getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(int mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
-    public int getExperience() {
-        return experience;
+    public int getExperiance() {
+        return experiance;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public void setExperiance(int experiance) {
+        this.experiance = experiance;
     }
 
     public double getSalary() {
@@ -71,10 +72,9 @@ public class AdminDto {
                 ", name='" + name + '\'' +
                 ", mailid='" + mailid + '\'' +
                 ", address='" + address + '\'' +
-                ", mobile=" + mobile +
-                ", experience=" + experience +
+                ", mobile='" + mobile + '\'' +
+                ", experiance=" + experiance +
                 ", salary=" + salary +
                 '}';
-
     }
 }

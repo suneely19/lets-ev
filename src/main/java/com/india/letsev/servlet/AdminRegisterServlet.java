@@ -1,5 +1,6 @@
 package com.india.letsev.servlet;
 
+import com.india.letsev.dto.AdminDto;
 import com.india.letsev.exception.LetsEVGeneralException;
 import com.india.letsev.service.AdminService;
 
@@ -35,6 +36,22 @@ public class AdminRegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        AdminDto AdminDto = new AdminDto();
+        AdminDto.setId(Integer.valueOf(req.getParameter("id")));
+        AdminDto.setName(req.getParameter("name"));
+        AdminDto.setAddress(req.getParameter("address"));
+        AdminDto.setMailid(req.getParameter("mailid"));
+        AdminDto.setExperiance(Integer.valueOf(req.getParameter("experiance")));
+        AdminDto.setSalary(Double.valueOf(req.getParameter("salary")));
+
+        try{
+            service.AdminRegister(AdminDto);
+            resp.sendRedirect("admin-registration-success.jsp");
+        }catch(LetsEVGeneralException e){
+            resp.sendRedirect("admin-registration-failure.jsp");
+        }
+
 
     }
 }

@@ -28,6 +28,7 @@ public class QueryConstants {
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
+    public static final String GET_ALL_USER_QUERY="select id,name,mailid,address,mobileno,licence from user";
     public static final String GET_USER_QUERY="select id,name,mailid,address,mobileno,licence from user where id=?";
 
 }

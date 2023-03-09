@@ -38,4 +38,27 @@ public class UserService {
         }
     }
 
+    public List<UserDTO> getAllUsers()throws LetsEVGeneralException{
+        try{
+            return repository.getAllUsers();
+        }catch (LetsEVDBException e){
+            throw new LetsEVGeneralException("Exception occured while fetching all the employees",e);
+        }
+    }
+
+    public int updateUser(UserDTO userDTO) throws LetsEVGeneralException {
+        try{
+            return repository.updateUser(userDTO);
+        }catch(LetsEVDBException e){
+            throw new LetsEVGeneralException("Exception occurred while Updating the user ",e);
+        }
+    }
+
+    public boolean deleteUser(int id) throws LetsEVGeneralException{
+        try{
+            return repository.deleteUser(id);
+        }catch (LetsEVDBException e){
+            throw new LetsEVGeneralException("Exception occured while deleting the User",e);
+        }
+    }
 }

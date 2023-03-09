@@ -7,7 +7,6 @@ import java.sql.Statement;
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.BookingDTO;
 import com.india.letsev.exception.LetsEVDBException;
-import com.india.letsev.mapper.BookingMapper;
 import com.india.letsev.util.ConnectionUtil;
 
 public class BookingRepository {

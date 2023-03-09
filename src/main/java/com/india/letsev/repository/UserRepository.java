@@ -58,7 +58,78 @@ public class UserRepository {
             ResultSet resultSet=preparedStatement.executeQuery();
             return UserMapper.populateUserFromResultSetMapper(resultSet);
         } catch (Exception e) {
-            throw new LetsEVDBException("Exception occurred while Fetching the Admin");
+            throw new LetsEVDBException("Exception occurred while Fetching the User");
+
+        } finally {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (Exception e) {
+                throw new LetsEVDBException("Exception occurred while closing the connection");
+
+            }
+        }
+    }
+
+    public List<UserDTO> getAllUsers() throws LetsEVDBException {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = ConnectionUtil.getConnection();
+            statement=connection.createStatement();
+
+            ResultSet resultSet=statement.executeQuery(QueryConstants.GET_ALL_USER_QUERY);
+            return UserMapper.populateAllUsersFromResultSetMapper(resultSet);
+        } catch (Exception e) {
+            System.out.println(e);
+            throw new LetsEVDBException("Exception occurred while Fetching the All User");
+
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                throw new LetsEVDBException("Exception occurred while closing the connection");
+
+            }
+        }
+    }
+
+    public int updateUser(UserDTO userDTO) throws LetsEVDBException{
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        try {
+            connection=ConnectionUtil.getConnection();
+            preparedStatement=connection.prepareStatement(QueryConstants.UPDATE_USER_QUERY);
+            preparedStatement= UserMapper.userUpdateMapper(preparedStatement,userDTO);
+            return preparedStatement.executeUpdate();
+
+        }catch (Exception e){
+            throw new LetsEVDBException("Exception occurred while Updating the User");
+
+        }finally {
+            try{
+                preparedStatement.close();
+                connection.close();
+            }catch (Exception e){
+                throw new LetsEVDBException("Exception occurred while closing the connection");
+
+            }
+        }
+    }
+
+    public boolean deleteUser(int id) throws LetsEVDBException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = ConnectionUtil.getConnection();
+            preparedStatement=connection.prepareStatement(QueryConstants.DELETE_USER_QUERY);
+            preparedStatement.setInt(1,id);
+            boolean flag=preparedStatement.execute();
+            return flag;
+        } catch (Exception e) {
+            System.out.println(e);
+            throw new LetsEVDBException("Exception occurred while Deleting the User");
 
         } finally {
             try {

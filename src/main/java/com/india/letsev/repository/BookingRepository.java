@@ -92,6 +92,31 @@ public class BookingRepository {
 			}
 		}
 	}
+	public BookingDTO getBooking(int id) throws LetsEVDBException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		try {
+			connection = ConnectionUtil.getConnection();
+			preparedStatement = connection.prepareStatement(QueryConstants.GET_BOOKING_QUERY);
+			preparedStatement.setInt(1,id);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			return BookingMapper.populateBookingFromResultSetMapper(resultSet);
+		} catch (Exception e) {
+			throw new LetsEVDBException("Exception occurred while Fetching the Booking");
+
+		} finally {
+			try {
+				preparedStatement.close();
+				connection.close();
+			} catch (Exception e) {
+				throw new LetsEVDBException("Exception occurred while closing the connection");
+
+			}
+		}
+	}
+
+
+
 	public int deletebooking(BookingDTO bookingDTO) throws LetsEVDBException {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;

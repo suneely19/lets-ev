@@ -22,20 +22,6 @@ public class BookingMapper {
 
     }
 
-//    public static BookingDTO populateBookingfromResultSetMapper(ResultSet resultSet) throws SQLException {
-//        BookingDTO bookingDTO=new BookingDTO();
-//        while (resultSet.next()){
-//            bookingDTO.setId(resultSet.getInt("id"));
-//            bookingDTO.setUser_id(resultSet.getString("User_id"));
-//            bookingDTO.setCar_id(resultSet.getInt("Car_id"));
-//            bookingDTO.setBoarding(resultSet.getString("Boarding"));
-//            bookingDTO.setDestination(resultSet.getString("Destination"));
-//            bookingDTO.setDuration(resultSet.getInt("Duration"));
-//            bookingDTO.setAmount(resultSet.getDouble("amount"));
-//        }
-//        return bookingDTO;
-//    }
-//
     public static List<BookingDTO> populateAllBoookingFromResultSetMapper(ResultSet resultSet) throws SQLException {
         List<BookingDTO> booking=new ArrayList<>();
         while (resultSet.next()){
@@ -51,6 +37,19 @@ public class BookingMapper {
         }
         return booking;
     }
+public static BookingDTO populateBookingFromResultSetMapper(ResultSet resultSet) throws SQLException {
+    BookingDTO bookingDto=new BookingDTO();
+    while (resultSet.next()){
+        bookingDto.setId(resultSet.getInt("id"));
+        bookingDto.setUser_id(resultSet.getString("user_id"));
+        bookingDto.setCar_id(resultSet.getInt("car_id"));
+        bookingDto.setBoarding(resultSet.getString("boarding"));
+        bookingDto.setDestination(resultSet.getString("destination"));
+        bookingDto.setDuration(resultSet.getInt("duration"));
+        bookingDto.setAmount(resultSet.getDouble("amount"));
+    }
+    return bookingDto;
+}
 
     public static PreparedStatement BookingUpdateMapper(PreparedStatement preparedStatement, BookingDTO bookingDTO) throws SQLException {
         preparedStatement.setString(1, bookingDTO.getUser_id());

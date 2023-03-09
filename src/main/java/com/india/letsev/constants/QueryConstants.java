@@ -22,14 +22,12 @@ public class QueryConstants {
 
  
     public static final String DELETE_BOOKING_QUERY="delete booking where id=?";
-
-
-
-
     public static final String UPDATE_CAR_QUERY="update car  set brand=?, model=? , colour=? , features=? , seating_capacity=? ,fuel_type=?,verified=?,milage=?,chasis_no=?,registration_no=?,engine_no=?,verified_admin_id=? where id=?";
 
     public static final String DELETE_CAR_QUERY="delete car where id=?";
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
+    public static final String GET_USER_QUERY="select id,name,mailid,address,mobileno,licence from user where id=?";
+
 }

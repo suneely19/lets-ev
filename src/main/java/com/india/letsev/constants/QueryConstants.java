@@ -14,4 +14,6 @@ public class QueryConstants {
     public static final String UPDATE_CAR_QUERY="update car  set brand=?, model=? , colour=? , features=? , seating_capacity=? ,fuel_type=?,verified=?,milage=?,chasis_no=?,registration_no=?,engine_no=?,verified_admin_id=? where id=?";
 
     public static final String DELETE_CAR_QUERY="delete car where id=?";
+    public static final String GET_CAR_QUERY ="select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car where id = ?" ;
+    public static final String GET_ALL_CAR_QUERY = "select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car";
 }

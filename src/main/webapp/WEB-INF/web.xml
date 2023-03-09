@@ -4,6 +4,50 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>get-admin</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAdminByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-admin</servlet-name>
+    <url-pattern>/getadmin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>get-all-admin</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAllAdminsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-all-admin</servlet-name>
+    <url-pattern>/getalladmins</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>edit-admin</servlet-name>
+    <servlet-class>com.india.letsev.servlet.EditAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>edit-admin</servlet-name>
+    <url-pattern>/updateadmin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>delete-admin</servlet-name>
+    <servlet-class>com.india.letsev.servlet.DeleteAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete-admin</servlet-name>
+    <url-pattern>/deleteadmin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>register-admin</servlet-name>
+    <servlet-class>com.india.letsev.servlet.AdminRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register-admin</servlet-name>
+    <url-pattern>/registeradmin</url-pattern>
+  </servlet-mapping>
 
 
 

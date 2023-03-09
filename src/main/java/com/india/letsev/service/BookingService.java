@@ -28,4 +28,19 @@ public class BookingService {
 			throw new LetsEVGeneralException("Exception occured while insert Booking table", e);
 		}
 	}
+	public int updateBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
+		try{
+			return repository.updateBooking(bookingDTO);
+		}catch(Exception e){
+			throw new LetsEVGeneralException("Exception occured while update Booking Table");
+		}
+	}
+
+	public int deleteBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
+		try{
+			return repository.deletebooking(bookingDTO);
+		}catch(Exception e){
+			throw new LetsEVGeneralException("exception occured while Delete Booking Table");
+		}
+	}
 }

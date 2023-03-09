@@ -47,4 +47,46 @@ public class BookingRepository {
 
 	}
 
+	public int updateBooking(BookingDTO bookingDTO) throws LetsEVDBException {
+		Connection connection=null;
+		PreparedStatement preparedStatement=null;
+		try{
+			connection=ConnectionUtil.getConnection();
+			preparedStatement=connection.prepareStatement(QueryConstants.UPDATE_BOOKING_QUERY);
+			preparedStatement=BookingMapper.BookingUpdateMapper(preparedStatement,bookingDTO);
+
+			return preparedStatement.executeUpdate();
+
+		}catch(Exception e){
+			throw new LetsEVDBException("Exception occur while booking a car",e);
+		}finally {
+			try{
+				preparedStatement.close();
+				connection.close();
+			}catch (Exception e){
+				throw new LetsEVDBException("Exception occur while booking a car",e);
+			}
+		}
+	}
+	public int deletebooking(BookingDTO bookingDTO) throws LetsEVDBException {
+		Connection connection=null;
+		PreparedStatement preparedStatement=null;
+		try{
+			connection=ConnectionUtil.getConnection();
+			preparedStatement=connection.prepareStatement(QueryConstants.DELETE_BOOKING_QUERY);
+			preparedStatement=BookingMapper.BookingDeleteMapper(preparedStatement,bookingDTO);
+			return preparedStatement.executeUpdate();
+		}catch(Exception e){
+			throw new LetsEVDBException("Exception occur while deleting a car booking",e);
+		}finally {
+			try{
+				preparedStatement.close();
+				connection.close();
+			}catch(Exception e){
+				throw new LetsEVDBException("Exception occur while booking a car",e);
+			}
+		}
+	}
+
+
 }

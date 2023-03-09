@@ -115,7 +115,7 @@ public class CarRepository {
     }
 
 
-    public int updateAdmin(CarDTO CarDto) throws LetsEVDBException{
+    public int updateCar(CarDTO CarDto) throws LetsEVDBException{
         Connection connection=null;
         PreparedStatement preparedStatement=null;
         try {

@@ -32,4 +32,9 @@ public class QueryConstants {
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
+
+    public static final String GET_CAR_QUERY=" select id,brand,model,colour,features,seatingcapacity,fueltype,verified,milage,chasisno,registrationno,engineno,verifiedadminid from car where id=?";
+
+    public static final String GET_ALL_CAR_QUERY="select id,brand,model,colour,features,seatingcapacity,fueltype,verified,milage,chasisno,registrationno,engineno,verifiedadminid from car";
+
 }

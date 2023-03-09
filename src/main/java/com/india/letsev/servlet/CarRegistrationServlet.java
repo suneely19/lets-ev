@@ -20,6 +20,20 @@ public class CarRegistrationServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException{
+        try{
+            boolean flag = service.createCarTable();
+            if(flag){
+                resp.sendRedirect("car-table-create-success");
+            }else {
+                resp.sendRedirect("car-table-create-failure.jsp");
+            }
+        }catch (LetsEVGeneralException e){
+            resp.sendRedirect("car-table-create-failure.jsp");
+        }
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CarDTO carDTO=new CarDTO();
         carDTO.setId(Integer.valueOf(req.getParameter("id")));

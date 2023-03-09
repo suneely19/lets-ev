@@ -64,7 +64,7 @@ public class BookingRepository {
 				preparedStatement.close();
 				connection.close();
 			}catch (Exception e){
-				throw new LetsEVDBException("Exception occur while booking a car",e);
+				throw new LetsEVDBException("Exception occur while closing the connection",e);
 			}
 		}
 	}
@@ -83,7 +83,7 @@ public class BookingRepository {
 				preparedStatement.close();
 				connection.close();
 			}catch(Exception e){
-				throw new LetsEVDBException("Exception occur while booking a car",e);
+				throw new LetsEVDBException("Exception occur while closing the connection",e);
 			}
 		}
 	}

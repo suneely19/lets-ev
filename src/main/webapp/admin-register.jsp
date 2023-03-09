@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page isELIgnored="false"%>
+
 <html>
 <title> Admin-Registration </title>
 <head>
@@ -5,68 +8,41 @@
 </head>
 <body align="center">
     <form align="center" action="<%= request.getContextPath() %>/registeradmin" method="post">
-
             <table align="center">
                 <tr>
-                    <td>
-                        Id :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Id" name="id">
-
-                    </td>
+                    <td><lable>Id : </lable></td>
+                    <td><input type="text" name="id"></td>
                 </tr>
                 <tr>
-                    <td>
-                        Name :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Name" name="name">
-                    </td>
+                    <td><lable>Name : </lable></td>
+                    <td><input type="text" name="name"></td>
                 </tr>
                 <tr>
-                    <td>
-                        Address :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Address" name="address">
-                    </td>
+                    <td><lable>Address : </lable></td>
+                    <td><input type="text" name="address"></td>
                 </tr>
                 <tr>
-                    <td>
-                        Mobile :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter mobile" name="mobile">
-                    </td>
+                    <td><lable>Mobile : </lable></td>
+                    <td><input type="text" name="mobile"></td>
                 </tr>
                 <tr>
-                    <td>
-                        Email :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Email" name="email">
-                    </td>
+                    <td><lable>Email : </lable></td>
+                    <td><input type="text" name="email"></td>
                 </tr>
                 <tr>
-                    <td>
-                        Experiance :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Experiance" name="experiance">
-                    </td>
+                    <td><lable>Experiance : </lable></td>
+                    <td><input type="text" name="experiance"></td>
                 </tr>
                 <tr>
-                    <td>
-                         Salary :
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Enter Salary" name="salary">
-                    </td>
+                    <td><lable>Salary : </lable></td>
+                    <td><input type="text" name="salary"></td>
+                </tr></tr></tr>
+                <tr>
+                <td align='center'><input type="submit" value="Submit"></td>
                 </tr>
             </table>
             <br>
-            <input type="submit" value="Submit">
+
         </form>
 </body>
 </html>

@@ -40,13 +40,14 @@ public class AdminRegisterServlet extends HttpServlet {
         AdminDto AdminDto = new AdminDto();
         AdminDto.setId(Integer.valueOf(req.getParameter("id")));
         AdminDto.setName(req.getParameter("name"));
+        AdminDto.setMobile(req.getParameter("mobile"));
         AdminDto.setAddress(req.getParameter("address"));
-        AdminDto.setMailid(req.getParameter("mailid"));
+        AdminDto.setMailid(req.getParameter("email"));
         AdminDto.setExperiance(Integer.valueOf(req.getParameter("experiance")));
         AdminDto.setSalary(Double.valueOf(req.getParameter("salary")));
 
         try{
-            service.AdminRegister(AdminDto);
+            service.adminRegister(AdminDto);
             resp.sendRedirect("admin-registration-success.jsp");
         }catch(LetsEVGeneralException e){
             resp.sendRedirect("admin-registration-failure.jsp");

@@ -48,6 +48,15 @@
     <servlet-name>register-admin</servlet-name>
     <url-pattern>/registeradmin</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>get-all-booking</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAllBookingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-all-booking</servlet-name>
+    <url-pattern>/viewAllBooking</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>update-booking</servlet-name>

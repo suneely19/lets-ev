@@ -26,7 +26,7 @@ public class GetAllCarsServlet extends HttpServlet {
             RequestDispatcher dispatcher=req.getRequestDispatcher("view-all-cars.jsp");
             dispatcher.forward(req,resp);
         }catch (LetsEVGeneralException e){
-            resp.sendRedirect("view=all-cars-failure.jsp");
+            resp.sendRedirect("view-all-cars-failure.jsp");
         }
     }
 }

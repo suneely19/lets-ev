@@ -28,7 +28,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
     carDTO.setFeatures(req.getParameter("features"));
     carDTO.setSeatingcapacity(Integer.valueOf(req.getParameter("seatingcapacity")));
     carDTO.setFuelType(req.getParameter("fueltype"));
-    carDTO.setMilage(Integer.valueOf(req.getParameter("milage")));
+    carDTO.setMilage(Double.valueOf(req.getParameter("milage")));
     carDTO.setChasisno(req.getParameter("chasisno"));
     carDTO.setRegistrationno(req.getParameter("registrationno"));
     carDTO.setEngineno(req.getParameter("engineno"));

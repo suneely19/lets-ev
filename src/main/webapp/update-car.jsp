@@ -64,7 +64,7 @@
     		Fueltype :
     			</td>
     		<td>
-    		<input type="text" placeholder="Enter fueltype" name="fueltype" value="${car.fueltype}">
+    		<input type="text" placeholder="Enter fueltype" name="fueltype" value="${car.fuelType}">
     		</td>
     		</tr>
     		<td>

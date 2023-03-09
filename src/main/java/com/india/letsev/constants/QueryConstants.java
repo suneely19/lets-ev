@@ -11,9 +11,9 @@ public class QueryConstants {
     public static final String UPDATE_USER_QUERY="update user set name=?, mailid=?, address=?, mobile=?, licence=? where id=?";
     public static final String DELETE_ADMIN_QUERY="delete from admin where id=?";
 
-    public static final String CREATE_CAR_QUERY="create car(id int,brand varchar(25),model varchar(30),colour varchar(30),features varchar(50),seating_capacity int,fuel_type varchar(30),verified varchar(30),milage double,chasis_no varchar(30),registration_no varchar(30),engine_no varchar(30),verified_admin_id int) ";
+    public static final String CREATE_CAR_QUERY="create table car(id int,brand varchar(25),model varchar(30),colour varchar(30),features varchar(50),seating_capacity int,fuel_type varchar(30),verified varchar(30),milage double,chasis_no varchar(30),registration_no varchar(30),engine_no varchar(30),verified_admin_id int) ";
 
-    public static final String DELETE_USER_QUERY="delete user where id=?";
+    public static final String DELETE_USER_QUERY="delete from user where id=?";
     public static final String INSERT_BOOKING_QUERY="insert into booking(id,user_id,car_id,boarding,destination,duration,amount) values(?,?,?,?,?,?,?)";
 
     public static final String INSERT_CAR_QUERY="insert into car(id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -21,20 +21,20 @@ public class QueryConstants {
      public static final String UPDATE_BOOKING_QUERY="update booking set user_id=?,car_id=?,boarding=?,destination=?,duration=?,amount=? where id=?";
 
  
-    public static final String DELETE_BOOKING_QUERY="delete booking where id=?";
+    public static final String DELETE_BOOKING_QUERY="delete from booking where id=?";
 
 
 
 
     public static final String UPDATE_CAR_QUERY="update car  set brand=?, model=? , colour=? , features=? , seating_capacity=? ,fuel_type=?,verified=?,milage=?,chasis_no=?,registration_no=?,engine_no=?,verified_admin_id=? where id=?";
 
-    public static final String DELETE_CAR_QUERY="delete car where id=?";
+    public static final String DELETE_CAR_QUERY="delete from car where id=?";
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
 
-    public static final String GET_CAR_QUERY=" select id,brand,model,colour,features,seatingcapacity,fueltype,verified,milage,chasisno,registrationno,engineno,verifiedadminid from car where id=?";
+    public static final String GET_CAR_QUERY=" select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car where id=?";
 
-    public static final String GET_ALL_CAR_QUERY="select id,brand,model,colour,features,seatingcapacity,fueltype,verified,milage,chasisno,registrationno,engineno,verifiedadminid from car";
+    public static final String GET_ALL_CAR_QUERY="select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car";
 
 }

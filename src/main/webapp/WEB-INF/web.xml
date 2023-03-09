@@ -63,7 +63,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>get-all-car</servlet-name>
-    <url-pattern>/getallcarss</url-pattern>
+    <url-pattern>/getallcars</url-pattern>
   </servlet-mapping>
 
   <servlet>

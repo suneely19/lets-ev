@@ -63,6 +63,7 @@ public class CarRepository {
             return  CarMapper.populateCarFromResultSetMapper(resultSet);
 
         }catch (Exception e) {
+            System.out.println(e);
             throw new LetsEVDBException("Exception occurred while fetching the car");
         }finally {
             try{
@@ -109,6 +110,7 @@ public class CarRepository {
             return preparedStatement.executeUpdate();
 
         }catch (Exception e){
+            System.out.println(e);
             throw new LetsEVDBException("Exception occurred while Updating the Car");
 
         }finally {

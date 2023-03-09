@@ -23,7 +23,7 @@ public class GetCarByIdServlet extends HttpServlet {
         try{
             CarDTO car = service.getCar(id);
             req.setAttribute("car",car);
-            RequestDispatcher dispatcher= req.getRequestDispatcher("update-admin.jsp");
+            RequestDispatcher dispatcher= req.getRequestDispatcher("update-car.jsp");
             dispatcher.forward(req,resp);
         }catch (LetsEVGeneralException e){
             resp.sendRedirect("get-car-failed.jsp");

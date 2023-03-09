@@ -31,5 +31,6 @@ public class QueryConstants {
     public static final String DELETE_CAR_QUERY="delete car where id=?";
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
+    public static final String GET_BOOKING_QUERY="select id,user_id,car_id,boarding,destination,duration,amount from booking where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
 }

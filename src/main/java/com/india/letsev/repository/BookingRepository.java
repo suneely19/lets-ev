@@ -68,13 +68,13 @@ public class BookingRepository {
 			}
 		}
 	}
-	public int deletebooking(BookingDTO bookingDTO) throws LetsEVDBException {
+	public int deletebooking(int id) throws LetsEVDBException {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;
 		try{
 			connection=ConnectionUtil.getConnection();
 			preparedStatement=connection.prepareStatement(QueryConstants.DELETE_BOOKING_QUERY);
-			preparedStatement=BookingMapper.BookingDeleteMapper(preparedStatement,bookingDTO);
+			preparedStatement=BookingMapper.BookingDeleteMapper(preparedStatement,id);
 			return preparedStatement.executeUpdate();
 		}catch(Exception e){
 			throw new LetsEVDBException("Exception occur while deleting a car booking",e);

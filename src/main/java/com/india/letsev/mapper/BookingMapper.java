@@ -63,8 +63,8 @@ public class BookingMapper {
         return preparedStatement;
 
     }
-    public static PreparedStatement BookingDeleteMapper(PreparedStatement preparedStatement, BookingDTO bookingDTO) throws SQLException {
-        preparedStatement.setInt(1, bookingDTO.getId());
+    public static PreparedStatement BookingDeleteMapper(PreparedStatement preparedStatement,int id) throws SQLException {
+        preparedStatement.setInt(1, id);
         return preparedStatement;
     }
 }

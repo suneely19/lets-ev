@@ -36,9 +36,9 @@ public class BookingService {
 		}
 	}
 
-	public int deleteBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
+	public int deleteBooking(int id) throws LetsEVGeneralException {
 		try{
-			return repository.deletebooking(bookingDTO);
+			return repository.deletebooking(id);
 		}catch(Exception e){
 			throw new LetsEVGeneralException("exception occured while Delete Booking Table");
 		}

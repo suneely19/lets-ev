@@ -49,6 +49,14 @@
     <url-pattern>/registeradmin</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>update-booking</servlet-name>
+    <servlet-class>com.india.letsev.servlet.CarBookingEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update-booking</servlet-name>
+    <url-pattern>/updatebooking</url-pattern>
+  </servlet-mapping>
 
 
 

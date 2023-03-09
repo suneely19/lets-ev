@@ -2,7 +2,9 @@ package com.india.letsev.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 import com.india.letsev.constants.QueryConstants;
 import com.india.letsev.dto.BookingDTO;
@@ -24,7 +26,7 @@ public class BookingRepository {
 		}
 	}
 
-	public int insertBooking(BookingDTO bookingDTO) throws LetsEVDBException {
+	public boolean insertBooking(BookingDTO bookingDTO) throws LetsEVDBException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {
@@ -32,7 +34,7 @@ public class BookingRepository {
 			preparedStatement = connection.prepareStatement(QueryConstants.INSERT_BOOKING_QUERY);
 			preparedStatement= BookingMapper.BookingInsertMapper(preparedStatement,bookingDTO);
 
-			return preparedStatement.executeUpdate();
+			return preparedStatement.execute();
 
 		} catch (Exception e) {
 			throw new LetsEVDBException("Exception occured while Booking the Car", e);
@@ -47,6 +49,28 @@ public class BookingRepository {
 
 	}
 
+	public List<BookingDTO> getAllBooking() throws LetsEVDBException {
+		Connection connection=null;
+		PreparedStatement preparedStatement=null;
+		try{
+			connection=ConnectionUtil.getConnection();
+			preparedStatement=connection.prepareStatement(QueryConstants.GET_ALL_BOOKING_QUERY);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+
+			return BookingMapper.populateAllBoookingFromResultSetMapper(resultSet);
+
+		}catch(Exception e){
+			throw new LetsEVDBException("Exception occur while getting all bookings",e);
+		}finally {
+			try{
+				preparedStatement.close();
+				connection.close();
+			}catch (Exception e){
+				throw new LetsEVDBException("Exception occured while closing the connection",e);
+			}
+		}
+	}
 	public int updateBooking(BookingDTO bookingDTO) throws LetsEVDBException {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;
@@ -64,7 +88,7 @@ public class BookingRepository {
 				preparedStatement.close();
 				connection.close();
 			}catch (Exception e){
-				throw new LetsEVDBException("Exception occur while booking a car",e);
+				throw new LetsEVDBException("Exception occured while closing the connection",e);
 			}
 		}
 	}

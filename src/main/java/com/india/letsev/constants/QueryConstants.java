@@ -32,4 +32,6 @@ public class QueryConstants {
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
+    
+    public static final String GET_ALL_BOOKING_QUERY="select * from admin";
 }

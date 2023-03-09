@@ -9,7 +9,10 @@
     <a href="get-admin.jsp">get-admin</a><br>
     <a href="update-admin.jsp">update-admin</a><br>
     <a href="delete-admin.jsp">delete-admin</a><br>
-    <a href="<%= request.getContextPath() %>/getalladmins">view all admins</a>
+    <a href="<%= request.getContextPath() %>/getalladmins">view all admins</a><br><br>
+    
+    <a href="<%= request.getContextPath() %>/viewAllBookings">view all bookings</a><br>
+    <a href=".jsp"></a><br>
 
 </body>
 </html>

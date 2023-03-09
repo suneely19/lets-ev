@@ -45,8 +45,11 @@ public class CarBookingServlet extends HttpServlet {
 		bookingDTO.setAmount(Double.parseDouble(req.getParameter("Amount")));
 
 		try {
-			bookingService.insertBooking(bookingDTO);
-			resp.sendRedirect("Car-Booking-create-success.jsp");
+			boolean flag = bookingService.insertBooking(bookingDTO);
+			
+			if (flag == true) {
+				resp.sendRedirect("Car-Booking-create-success.jsp");
+			}
 		} catch (LetsEVGeneralException e) {
 			resp.sendRedirect("Car-Booking-failure-success.jsp");
 		}

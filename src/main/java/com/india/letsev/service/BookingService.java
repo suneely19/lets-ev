@@ -1,5 +1,7 @@
 package com.india.letsev.service;
 
+import java.util.List;
+
 import com.india.letsev.dto.BookingDTO;
 import com.india.letsev.exception.LetsEVDBException;
 import com.india.letsev.exception.LetsEVGeneralException;
@@ -21,12 +23,19 @@ public class BookingService {
 		}
 	}
 
-	public int insertBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
+	public boolean insertBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
 		try {
 			return repository.insertBooking(bookingDTO);
 		} catch (LetsEVDBException e) {
 			throw new LetsEVGeneralException("Exception occured while insert Booking table", e);
 		}
+	}
+	public List<BookingDTO> getAllBookings() throws LetsEVGeneralException{
+		try {
+			return repository.getAllBooking();
+		} catch (LetsEVDBException e) {
+			throw new LetsEVGeneralException("Exception occured while fetching all Bookings", e);
+		}	
 	}
 	public int updateBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
 		try{

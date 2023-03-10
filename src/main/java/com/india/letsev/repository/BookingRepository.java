@@ -39,6 +39,7 @@ public class BookingRepository {
 			return preparedStatement.execute();
 
 		} catch (Exception e) {
+			System.out.println(e);
 			throw new LetsEVDBException("Exception occured while Booking the Car", e);
 		} finally {
 			try {

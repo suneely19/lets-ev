@@ -26,7 +26,7 @@ public class DeleteBookingServlet extends HttpServlet {
             service.deleteBooking(id);
             resp.sendRedirect("delete-booking-success.jsp");
         }catch (LetsEVGeneralException e){
-            resp.sendRedirect("delete-booking-failure");
+            resp.sendRedirect("delete-booking-failure.jsp");
         }
     }
 }

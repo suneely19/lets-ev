@@ -25,10 +25,10 @@
 				<td>${booking.id}</td>
 				<td>${booking.user_id}</td>
 				<td>${booking.car_id}</td>
-				<td>${booking.Boarding}</td>
-				<td>${booking.Destination}</td>
-				<td>${booking.Duration}</td>
-				<td>${booking.Amount}</td>
+				<td>${booking.boarding}</td>
+				<td>${booking.destination}</td>
+				<td>${booking.duration}</td>
+				<td>${booking.amount}</td>
 				<td><a href="<%=request.getContextPath()%>/getBooking?id=${booking.id}">Edit Booking</a></td>
 				<td><a href="<%=request.getContextPath()%>/deleteBooking?id=${booking.id}">Delete Bookings</a></td>
 		</c:forEach>
@@ -36,7 +36,7 @@
 	<table align="center">
 		<tr>
 
-			<td><a href="Booking-register.jsp" style="" :30px>Booking
+			<td><a href="booking-register.jsp" style="" :30px>Booking
 					register</a></td>
 
 			<td><a href="index.jsp" style="margin-right: 30px">Home</a></td>

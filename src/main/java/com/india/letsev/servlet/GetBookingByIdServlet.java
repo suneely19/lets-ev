@@ -31,7 +31,7 @@ public class GetBookingByIdServlet extends HttpServlet {
             RequestDispatcher dispatcher=req.getRequestDispatcher("update-booking.jsp");
             dispatcher.forward(req,resp);
         }catch (LetsEVGeneralException e){
-            resp.sendRedirect("get-bookinh-failed.jsp");
+            resp.sendRedirect("get-booking-failed.jsp");
         }
     }
 }

@@ -14,8 +14,7 @@ public class UserMapper {
         preparedStatement.setInt(1,userDTO.getId());
         preparedStatement.setString(2, userDTO.getName());
         preparedStatement.setString(3, userDTO.getMailid());
-        preparedStatement.setString(3, userDTO.getAddress());
-        preparedStatement.setString(4, userDTO.getMobileno());
+        preparedStatement.setString(4, userDTO.getAddress());
         preparedStatement.setString(5, userDTO.getMobileno());
         preparedStatement.setString(6, userDTO.getLicence());
         return preparedStatement;
@@ -42,7 +41,7 @@ public class UserMapper {
             userDTO.setName(resultSet.getString("name"));
             userDTO.setMailid(resultSet.getString("mailid"));
             userDTO.setAddress(resultSet.getString("address"));
-            userDTO.setMobileno(resultSet.getString("mobile"));
+            userDTO.setMobileno(resultSet.getString("mobileno"));
             userDTO.setLicence(resultSet.getString("licence"));
             users.add(userDTO);
         }
@@ -51,13 +50,12 @@ public class UserMapper {
 
     public static PreparedStatement userUpdateMapper(PreparedStatement preparedStatement, UserDTO userDTO) throws SQLException {
 
-        preparedStatement.setInt(1,userDTO.getId());
-        preparedStatement.setString(2, userDTO.getName());
-        preparedStatement.setString(3, userDTO.getMailid());
+        preparedStatement.setString(1, userDTO.getName());
+        preparedStatement.setString(2, userDTO.getMailid());
         preparedStatement.setString(3, userDTO.getAddress());
         preparedStatement.setString(4, userDTO.getMobileno());
-        preparedStatement.setString(5, userDTO.getMobileno());
-        preparedStatement.setString(6, userDTO.getLicence());
+        preparedStatement.setString(5, userDTO.getLicence());
+        preparedStatement.setInt(6,userDTO.getId());
 
 
         return preparedStatement;

@@ -4,7 +4,7 @@
       <h1>User Registration</h1>
    </head>
    <body align='center'>
-     <form action="<%= request.getContextPath() %>/getuser" method="post">
+     <form action="<%= request.getContextPath() %>/registeruser" method="post">
        <table align='center'>
          <tr>
             <td><label>Id           : </label></td>
@@ -12,7 +12,7 @@
          </tr>
          <tr>
             <td><label>Name        : </label></td>
-            <td><input type="text" name="brand"/><br></td>
+            <td><input type="text" name="name"/><br></td>
          </tr>
          <tr>
             <td><label>Mail_id    : </label></td>

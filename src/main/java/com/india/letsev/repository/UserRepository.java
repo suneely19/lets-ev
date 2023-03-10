@@ -23,6 +23,7 @@ public class UserRepository {
             Statement statement=connection.createStatement();
             return statement.execute(QueryConstants.CREATE_USER_QUERY);
         }catch (Exception e){
+            System.out.println(e);
             throw new LetsEVDBException("Execption occured while creating the user table",e);
         }
     }
@@ -58,6 +59,7 @@ public class UserRepository {
             ResultSet resultSet=preparedStatement.executeQuery();
             return UserMapper.populateUserFromResultSetMapper(resultSet);
         } catch (Exception e) {
+            System.out.println(e);
             throw new LetsEVDBException("Exception occurred while Fetching the User");
 
         } finally {
@@ -105,6 +107,7 @@ public class UserRepository {
             return preparedStatement.executeUpdate();
 
         }catch (Exception e){
+            System.out.println(e);
             throw new LetsEVDBException("Exception occurred while Updating the User");
 
         }finally {

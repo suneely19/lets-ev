@@ -22,7 +22,8 @@ public class EditUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserDTO userDTO=new UserDTO();
-        userDTO.setId(Integer.valueOf("name"));
+
+        userDTO.setId(Integer.valueOf(req.getParameter("id")));
         userDTO.setName(req.getParameter("name"));
         userDTO.setMailid(req.getParameter("mailid"));
         userDTO.setAddress(req.getParameter("address"));

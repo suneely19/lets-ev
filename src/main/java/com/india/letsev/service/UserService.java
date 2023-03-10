@@ -34,6 +34,7 @@ public class UserService {
         try{
             return repository.getUser(id);
         }catch(LetsEVDBException e){
+            System.out.println(e);
             throw new LetsEVGeneralException("Exception occurred while Fetching the user ",e);
         }
     }
@@ -50,6 +51,7 @@ public class UserService {
         try{
             return repository.updateUser(userDTO);
         }catch(LetsEVDBException e){
+            System.out.println(e);
             throw new LetsEVGeneralException("Exception occurred while Updating the user ",e);
         }
     }
@@ -58,7 +60,7 @@ public class UserService {
         try{
             return repository.deleteUser(id);
         }catch (LetsEVDBException e){
-            throw new LetsEVGeneralException("Exception occured while deleting the User",e);
+            throw new LetsEVGeneralException("Exception occurred while deleting the User",e);
         }
     }
 }

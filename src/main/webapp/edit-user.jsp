@@ -9,7 +9,7 @@
 <body>
  <div align="center">
   <h1>Edit User by using ID</h1>
-  <form action="<%= request.getContextPath() %>/getadmin?id=${id}" method="get">
+  <form action="<%= request.getContextPath() %>/getuser?id=${id}" method="get">
    <table style="with: 80%">
      <td>User ID</td>
      <td><input type="text" name="id" /></td>

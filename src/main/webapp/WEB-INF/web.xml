@@ -85,7 +85,7 @@
 
   <servlet>
     <servlet-name>register-user</servlet-name>
-    <servlet-class>com.india.letsev.servlet.UserRegisterServlet</servlet-class>
+    <servlet-class>com.india.letsev.servlet.UserRegistrationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>register-user</servlet-name>

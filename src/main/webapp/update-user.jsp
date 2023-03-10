@@ -29,11 +29,11 @@
     </tr>
     <tr>
       <td><lable>MobileNo:</lable>
-      <td><input type="text" name="mobileno" value="${user.mobile}"></td>
+      <td><input type="text" name="mobileno" value="${user.mobileno}"></td>
     </tr>
     <tr>
       <td><lable>Licence:</lable></td>
-      <td><input type="text" name="licence" value="${user.salary}"></td>
+      <td><input type="text" name="licence" value="${user.licence}"></td>
     </tr>
     <tr>
       <td><input type="submit" value="Update"></td>

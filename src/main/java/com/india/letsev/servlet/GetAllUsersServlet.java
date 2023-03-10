@@ -25,7 +25,7 @@ public class GetAllUsersServlet extends HttpServlet {
         try{
             List<UserDTO> users=service.getAllUsers();
             req.setAttribute("users",users);
-            RequestDispatcher dispatcher=req.getRequestDispatcher("view-all-users.jspp");
+            RequestDispatcher dispatcher=req.getRequestDispatcher("view-all-users.jsp");
             dispatcher.forward(req,resp);
         }catch (LetsEVGeneralException e){
             resp.sendRedirect("view-all-users-failure.jsp");

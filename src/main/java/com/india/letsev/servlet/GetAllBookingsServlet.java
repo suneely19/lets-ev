@@ -17,26 +17,22 @@ import com.india.letsev.service.BookingService;
 public class GetAllBookingsServlet extends HttpServlet {
 
 	BookingService bookingService;
+
 	@Override
 	public void init() throws ServletException {
-		bookingService= new BookingService();
+		bookingService = new BookingService();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			List<BookingDTO> bookings = new ArrayList<BookingDTO>();
-			bookings=bookingService.getAllBookings();
-			req.setAttribute("Bookings",bookings);
-            RequestDispatcher dispatcher=req.getRequestDispatcher("view-all-bookings.jsp");
-            dispatcher.forward(req,resp);
-		}catch(LetsEVGeneralException e) {
+			List<BookingDTO> bookings = bookingService.getAllBookings();
+			req.setAttribute("Bookings", bookings);
+			RequestDispatcher dispatcher = req.getRequestDispatcher("view-all-bookings.jsp");
+			dispatcher.forward(req, resp);
+		} catch (LetsEVGeneralException e) {
 			resp.sendRedirect("view-all-bookings-failure.jsp");
 		}
 
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-	}}
+}

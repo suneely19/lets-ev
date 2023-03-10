@@ -13,7 +13,8 @@
 
 
    <a href="booking-register.jsp">register-booking</a><br>
-     <a href="update-booking.jsp">update-booking</a><br>
+   <a href="edit-booking.jsp">edit-booking</a><br>
+    <a href="update-booking.jsp">update-booking</a><br>
      <a href="delete-booking.jsp">delete-booking</a><br>
       <a href="get-booking.jsp">get-booking</a><br>
     <a href="<%= request.getContextPath() %>/viewAllBookings">view all bookings</a><br>

@@ -50,6 +50,30 @@
   </servlet-mapping>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <servlet>
     <servlet-name>booking-register</servlet-name>
     <servlet-class>com.india.letsev.servlet.CarBookingServlet</servlet-class>
@@ -58,6 +82,7 @@
     <servlet-name>booking-register</servlet-name>
     <url-pattern>/bookingregister</url-pattern>
   </servlet-mapping>
+
 
   <servlet>
     <servlet-name>get-booking</servlet-name>

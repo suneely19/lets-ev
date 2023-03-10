@@ -11,7 +11,7 @@
   <h1>Get Booking by using ID</h1>
   <form action="<%= request.getContextPath() %>/getbooking?id=${id}" method="get">
    <table style="with: 80%">
-     <td>Admin ID</td>
+     <td>Booking ID</td>
      <td><input type="text" name="id" /></td>
     </tr>
    </table>

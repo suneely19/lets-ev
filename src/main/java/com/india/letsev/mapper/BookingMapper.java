@@ -62,8 +62,4 @@ public static BookingDTO populateBookingFromResultSetMapper(ResultSet resultSet)
         return preparedStatement;
 
     }
-    public static PreparedStatement BookingDeleteMapper(PreparedStatement preparedStatement,int id) throws SQLException {
-        preparedStatement.setInt(1, id);
-        return preparedStatement;
-    }
 }

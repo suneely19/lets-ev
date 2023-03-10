@@ -21,7 +21,7 @@ public class QueryConstants {
      public static final String UPDATE_BOOKING_QUERY="update booking set user_id=?,car_id=?,boarding=?,destination=?,duration=?,amount=? where id=?";
 
  
-    public static final String DELETE_BOOKING_QUERY="delete booking where id=?";
+    public static final String DELETE_BOOKING_QUERY="delete from booking where id=?";
 
 
 

@@ -35,11 +35,11 @@
                          </tr>
                          <tr>
                               <td><label>Amount:</label></td>
-                              <td><input type"text" name="amount" value="${booking.user_amount}"></td>
+                              <td><input type"text" name="amount" value="${booking.amount}"></td>
                               </tr>
 
                               <tr>
-                               <td align='center'><input type="submit" value="Submit"></td>
+                               <td align='center'><input type="submit" value="Update"></td>
                                </tr>
 
                               </table>

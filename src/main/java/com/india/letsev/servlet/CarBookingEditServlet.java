@@ -23,12 +23,12 @@ public class CarBookingEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BookingDTO bookingDTO=new BookingDTO();
         bookingDTO.setId(Integer.valueOf(req.getParameter("id")));
-        bookingDTO.setUser_id(req.getParameter("User_id"));
+        bookingDTO.setUser_id(req.getParameter("user_id"));
         bookingDTO.setCar_id(Integer.valueOf(req.getParameter("car_id")));
         bookingDTO.setBoarding(req.getParameter("boarding"));
         bookingDTO.setDestination(req.getParameter("destination"));
         bookingDTO.setDuration(Integer.valueOf(req.getParameter("duration")));
-        bookingDTO.setAmount(Integer.valueOf(req.getParameter("amount")));
+        bookingDTO.setAmount(Double.valueOf(req.getParameter("amount")));
 
         try{
             service.updateBooking(bookingDTO);

@@ -29,8 +29,8 @@
 				<td>${booking.destination}</td>
 				<td>${booking.duration}</td>
 				<td>${booking.amount}</td>
-				<td><a href="<%=request.getContextPath()%>/getbooking?id=${booking.id}">Edit Booking</a></td>
-				<td><a href="<%=request.getContextPath()%>/deletebooking?id=${booking.id}">Delete Bookings</a></td>
+				<td><a href="<%=request.getContextPath()%>/getbooking?id=${booking.id}">Edit</a></td>
+				<td><a href="<%=request.getContextPath()%>/deletebooking?id=${booking.id}">Delete</a></td>
 		</c:forEach>
 	</table>
 	<table align="center">

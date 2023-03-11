@@ -23,7 +23,7 @@ public class BookingService {
 		}
 	}
 
-	public boolean insertBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
+	public int insertBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
 		try {
 			return repository.insertBooking(bookingDTO);
 		} catch (LetsEVDBException e) {
@@ -47,7 +47,7 @@ public class BookingService {
 	public int updateBooking(BookingDTO bookingDTO) throws LetsEVGeneralException {
 		try{
 			return repository.updateBooking(bookingDTO);
-		}catch(Exception e){
+		}catch(LetsEVDBException e){
 			throw new LetsEVGeneralException("Exception occured while update Booking Table");
 		}
 	}
@@ -55,8 +55,8 @@ public class BookingService {
 
 	public boolean deleteBooking(int id) throws LetsEVGeneralException {
 		try{
-			return repository.deletebooking(id);
-		}catch(Exception e){
+			return repository.deleteBooking(id);
+		}catch(LetsEVDBException e){
 			throw new LetsEVGeneralException("exception occured while Delete Booking Table");
 		}
 	}

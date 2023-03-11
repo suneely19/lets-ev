@@ -23,12 +23,13 @@ public class BookingRepository {
 			return statement.execute(QueryConstants.CREATE_BOOKING_QUERY);
 
 		} catch (Exception e) {
+			System.out.println(e);
 			throw new LetsEVDBException("Exception occured while creating the Booking table", e);
 
 		}
 	}
 
-	public boolean insertBooking(BookingDTO bookingDTO) throws LetsEVDBException {
+	public int  insertBooking(BookingDTO bookingDTO) throws LetsEVDBException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {
@@ -36,17 +37,16 @@ public class BookingRepository {
 			preparedStatement = connection.prepareStatement(QueryConstants.INSERT_BOOKING_QUERY);
 			preparedStatement= BookingMapper.BookingInsertMapper(preparedStatement,bookingDTO);
 
-			return preparedStatement.execute();
+			return preparedStatement.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.println(e);
-			throw new LetsEVDBException("Exception occured while Booking the Car", e);
+			throw new LetsEVDBException("Exception occured while Booking the Car");
 		} finally {
 			try {
 				preparedStatement.close();
 				connection.close();
 			} catch (Exception e) {
-				throw new LetsEVDBException("Exception occured while closing the connection", e);
+				throw new LetsEVDBException("Exception occured while closing the connection");
 			}
 		}
 
@@ -85,7 +85,7 @@ public class BookingRepository {
 			connection=ConnectionUtil.getConnection();
 			preparedStatement=connection.prepareStatement(QueryConstants.GET_ALL_BOOKING_QUERY);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			
+
 
 			return BookingMapper.populateAllBoookingFromResultSetMapper(resultSet);
 
@@ -122,7 +122,7 @@ public class BookingRepository {
 			}
 		}
 	}
-	public boolean deletebooking(int id) throws LetsEVDBException {
+	public boolean deleteBooking(int id) throws LetsEVDBException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {

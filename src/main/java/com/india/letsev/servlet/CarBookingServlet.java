@@ -23,12 +23,8 @@ public class CarBookingServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			boolean flag = bookingService.createBooking();
-			if (flag == true) {
-				resp.sendRedirect("Booking-table-create-success.jsp");
-			} else {
-				resp.sendRedirect("Booking-table-create-failure.jsp");
-			}
+			 bookingService.createBooking();
+			 resp.sendRedirect("Booking-table-create-success.jsp");
 		} catch (LetsEVGeneralException e) {
 			resp.sendRedirect("Booking-table-create-failure.jsp");
 		}

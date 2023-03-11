@@ -23,12 +23,8 @@ public class AdminRegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-           boolean flag= service.createAdminTable();
-           if(flag){
-               resp.sendRedirect("admin-table-create-success.jsp");
-           }else {
-               resp.sendRedirect("admin-table-create-failure.jsp");
-           }
+        service.createAdminTable();
+        resp.sendRedirect("admin-table-create-success.jsp");
         }catch (LetsEVGeneralException e){
                 resp.sendRedirect("admin-table-create-failure.jsp");
         }

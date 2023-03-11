@@ -21,12 +21,8 @@ public class UserRegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-            boolean flag=service.createUserTable();
-            if(flag){
-                resp.sendRedirect("user-table-create-success.jsp");
-            }else{
-                resp.sendRedirect("user-table-create-failure.jsp");
-            }
+           service.createUserTable();
+            resp.sendRedirect("user-table-create-success.jsp");
         }catch (LetsEVGeneralException e){
             resp.sendRedirect("user-table-create-failure.jsp");
         }

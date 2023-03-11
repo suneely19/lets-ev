@@ -37,18 +37,20 @@ public class CarBookingServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BookingDTO bookingDTO = new BookingDTO();
+		bookingDTO.setId(Integer.parseInt(req.getParameter("id")));
 		bookingDTO.setUser_id(req.getParameter("user_id"));
 		bookingDTO.setCar_id(Integer.parseInt(req.getParameter("car_id")));
-		bookingDTO.setBoarding(req.getParameter("Boarding"));
-		bookingDTO.setDestination(req.getParameter("Destination"));
-		bookingDTO.setDuration(Integer.parseInt(req.getParameter("Duration")));
-		bookingDTO.setAmount(Double.parseDouble(req.getParameter("Amount")));
+		bookingDTO.setBoarding(req.getParameter("boarding"));
+		bookingDTO.setDestination(req.getParameter("destination"));
+		bookingDTO.setDuration(Integer.parseInt(req.getParameter("duration")));
+		bookingDTO.setAmount(Double.parseDouble(req.getParameter("amount")));
 
 		try {
 			bookingService.insertBooking(bookingDTO);
-			resp.sendRedirect("Car-Booking-create-success.jsp");
+			resp.sendRedirect("booking-register-success.jsp");
+
 		} catch (LetsEVGeneralException e) {
-			resp.sendRedirect("Car-Booking-failure-success.jsp");
+			resp.sendRedirect("booking-register-failure.jsp");
 		}
 	}
 

@@ -20,13 +20,25 @@ public class QueryConstants {
 
      public static final String UPDATE_BOOKING_QUERY="update booking set user_id=?,car_id=?,boarding=?,destination=?,duration=?,amount=? where id=?";
 
-    public static final String DELETE_BOOKING_QUERY="delete booking where id=?";
+
+ 
+    public static final String DELETE_BOOKING_QUERY="delete from booking where id=?";
+
+
+
+
+
     public static final String UPDATE_CAR_QUERY="update car  set brand=?, model=? , colour=? , features=? , seating_capacity=? ,fuel_type=?,verified=?,milage=?,chasis_no=?,registration_no=?,engine_no=?,verified_admin_id=? where id=?";
 
     public static final String DELETE_CAR_QUERY="delete from car where id=?";
 
     public static final String GET_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin where id=?";
+    public static final String GET_BOOKING_QUERY="select id,user_id,car_id,boarding,destination,duration,amount from booking where id=?";
     public static final String GET_ALL_ADMIN_QUERY="select id,name,mailid,address,mobile,experiance,salary from admin";
+
+    
+    public static final String GET_ALL_BOOKING_QUERY="select * from booking";
+
 
     public static final String GET_ALL_USER_QUERY="select id,name,mailid,address,mobileno,licence from user";
     public static final String GET_USER_QUERY="select id,name,mailid,address,mobileno,licence from user where id=?";
@@ -35,6 +47,7 @@ public class QueryConstants {
     public static final String GET_CAR_QUERY=" select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car where id=?";
 
     public static final String GET_ALL_CAR_QUERY="select id,brand,model,colour,features,seating_capacity,fuel_type,verified,milage,chasis_no,registration_no,engine_no,verified_admin_id from car";
+
 
 
 }

@@ -153,4 +153,49 @@
     <url-pattern>/registeruser</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>booking-register</servlet-name>
+    <servlet-class>com.india.letsev.servlet.CarBookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>booking-register</servlet-name>
+    <url-pattern>/bookingregister</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>get-booking</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetBookingByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-booking</servlet-name>
+    <url-pattern>/getbooking</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>get-all-booking</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAllBookingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-all-booking</servlet-name>
+    <url-pattern>/viewAllBookings</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>update-booking</servlet-name>
+    <servlet-class>com.india.letsev.servlet.CarBookingEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update-booking</servlet-name>
+    <url-pattern>/updatebooking</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+  <servlet-name>delete-booking</servlet-name>
+  <servlet-class>com.india.letsev.servlet.DeleteBookingServlet</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>delete-booking</servlet-name>
+    <url-pattern>/deletebooking</url-pattern>
+  </servlet-mapping>
 </web-app>

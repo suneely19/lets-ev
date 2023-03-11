@@ -39,6 +39,21 @@
      <td>&nbsp</td>
      <td><a href="get-user.jsp">get-user</a></td>
    </tr>
+   <tr>
+        <td><a href="booking-register.jsp">register-booking</a></td>
+         <td>&nbsp</td>
+        <td><a href="edit-booking.jsp">edit-booking</a></td>
+         <td>&nbsp</td>
+       <td><a href="update-booking.jsp">update-booking</a></td>
+    </tr>
+    <tr>
+        <td><a href="delete-booking.jsp">delete-booking</a></td>
+         <td>&nbsp</td>
+        <td><a href="get-booking.jsp">get-booking</a></td>
+         <td>&nbsp</td>
+       <td><a href="<%= request.getContextPath() %>/viewAllBookings">view all bookings</a></td>
+
+   </tr>
 </table>
 </body>
 </html>

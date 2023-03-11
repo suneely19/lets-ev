@@ -44,14 +44,12 @@
          <td>&nbsp</td>
         <td><a href="edit-booking.jsp">edit-booking</a></td>
          <td>&nbsp</td>
-       <td><a href="update-booking.jsp">update-booking</a></td>
+        <td><a href="delete-booking.jsp">delete-booking</a></td>
     </tr>
     <tr>
-        <td><a href="delete-booking.jsp">delete-booking</a></td>
-         <td>&nbsp</td>
         <td><a href="get-booking.jsp">get-booking</a></td>
          <td>&nbsp</td>
-       <td><a href="<%= request.getContextPath() %>/viewAllBookings">view all bookings</a></td>
+       <td><a href="<%= request.getContextPath() %>/viewallbookings">view all bookings</a></td>
 
    </tr>
 </table>

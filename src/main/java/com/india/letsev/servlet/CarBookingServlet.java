@@ -24,9 +24,9 @@ public class CarBookingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			 bookingService.createBooking();
-			 resp.sendRedirect("Booking-table-create-success.jsp");
+			 resp.sendRedirect("booking-table-create-success.jsp");
 		} catch (LetsEVGeneralException e) {
-			resp.sendRedirect("Booking-table-create-failure.jsp");
+			resp.sendRedirect("booking-table-create-failure.jsp");
 		}
 	}
 

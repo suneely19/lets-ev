@@ -178,7 +178,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>get-all-booking</servlet-name>
-    <url-pattern>/viewAllBookings</url-pattern>
+    <url-pattern>/viewallbookings</url-pattern>
   </servlet-mapping>
 
   <servlet>

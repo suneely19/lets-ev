@@ -18,15 +18,11 @@ public class LetsEvFilter implements Filter {
         String url=request.getRequestURL().toString();
         System.out.println(url);
 
-        if(!url.contains("booking") && !url.contains("car") && !url.contains("user") && !url.contains("admin") && !url.contains("index.jsp")) {
+        if(!url.contains("booking") && !url.contains("car") && !url.contains("user") && !url.contains("admin") && !url.contains("index.jsp") && !url.equals("http://localhost:8080/lets-ev/")) {
             PrintWriter writer=servletResponse.getWriter();
             writer.println("<html><h1> The Requested URL is not corresponding to Our Application, Please check and provide the correct URl</h1>" +
                     "<br><a align='center' href='index.jsp'>Home</a></html>");
 
-        }else if(url.contains("booking")){
-            PrintWriter writer=servletResponse.getWriter();
-            writer.println("<html><h1> Still we are not fully implemented booking module please try after few days</h1>" +
-                    "<br><a href='index.jsp'>Home</a></html>");
         }else{
            filterChain.doFilter(servletRequest,servletResponse);
         }

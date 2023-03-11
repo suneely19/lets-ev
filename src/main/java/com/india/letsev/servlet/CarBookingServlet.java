@@ -37,6 +37,7 @@ public class CarBookingServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BookingDTO bookingDTO = new BookingDTO();
+		bookingDTO.setId(Integer.parseInt(req.getParameter("id")));
 		bookingDTO.setUser_id(req.getParameter("user_id"));
 		bookingDTO.setCar_id(Integer.parseInt(req.getParameter("car_id")));
 		bookingDTO.setBoarding(req.getParameter("boarding"));

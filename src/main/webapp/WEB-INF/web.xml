@@ -48,8 +48,93 @@
     <servlet-name>register-admin</servlet-name>
     <url-pattern>/registeradmin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>get-user</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetUserByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-user</servlet-name>
+    <url-pattern>/getuser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>get-all-users</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAllUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-all-users</servlet-name>
+    <url-pattern>/getallusers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>get-car</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetCarByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-car</servlet-name>
+    <url-pattern>/getcar</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>get-all-car</servlet-name>
+    <servlet-class>com.india.letsev.servlet.GetAllCarsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get-all-car</servlet-name>
+    <url-pattern>/getallcars</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>edit-car</servlet-name>
+    <servlet-class>com.india.letsev.servlet.EditCarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>edit-car</servlet-name>
+    <url-pattern>/updatecar</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>delete-car</servlet-name>
+    <servlet-class>com.india.letsev.servlet.DeleteCarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete-car</servlet-name>
+    <url-pattern>/deletecar</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>register-car</servlet-name>
+    <servlet-class>com.india.letsev.servlet.CarRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register-car</servlet-name>
+    <url-pattern>/registercar</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>edit-user</servlet-name>
+    <servlet-class>com.india.letsev.servlet.EditUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>edit-user</servlet-name>
+    <url-pattern>/updateuser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>delete-user</servlet-name>
+    <servlet-class>com.india.letsev.servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete-user</servlet-name>
+    <url-pattern>/deleteuser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>register-user</servlet-name>
+    <servlet-class>com.india.letsev.servlet.UserRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register-user</servlet-name>
+    <url-pattern>/registeruser</url-pattern>
+  </servlet-mapping>
 
 
 

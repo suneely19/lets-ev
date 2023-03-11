@@ -5,7 +5,7 @@ import com.india.letsev.exception.LetsEVDBException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectionUtil {
+public class  ConnectionUtil {
 
     public static Connection getConnection() throws LetsEVDBException{
         Connection connection=null;
@@ -15,7 +15,7 @@ public class ConnectionUtil {
 
         }catch (Exception e){
             System.out.println(e);
-            throw  new LetsEVDBException("Exception occured while creating the connection");
+            throw  new LetsEVDBException("Exception occurred while creating the connection");
         }
 
         return connection;

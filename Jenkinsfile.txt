@@ -1,21 +1,9 @@
 pipeline{
 	agent any
 	stages{
-		stage("clean"){
-			steps{
-				deleteDir()
-			}
-		}
-		stage("Clone"){
-			steps{
-				sh "git clone https://github.com/suneely19/lets-ev.git"
-			}
-		}
 		stage("Build"){
 			steps{
-				dir("lets-ev"){
 					sh "mvn clean install"
-				}
 			}
 		}
 	}

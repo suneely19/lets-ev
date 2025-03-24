@@ -6,6 +6,11 @@ pipeline{
 					sh "mvn clean install"
 			}
 		}
+		stage("test"){
+			steps{
+					echo "Build is completed"
+			}
+		}
 	}
 
 }
